@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>CGPA Calculator</h1>
+<form action="/calculate" method="post">
+    <div id="subjects">
+        <div>
+            Grade Point: <input type="number" name="gradePoint" step="0.1" required>
+            Credit: <input type="number" name="credit" required>
+        </div>
+    </div>
+    <button type="button" onclick="addSubject()">Add Subject</button><br><br>
+    <input type="submit" value="Calculate CGPA">
+</form>
+
+<script>
+    function addSubject() {
+        const div = document.createElement('div');
+        div.innerHTML = 'Grade Point: <input type="number" name="gradePoint" step="0.1" required> ' +
+                        'Credit: <input type="number" name="credit" required>';
+        document.getElementById('subjects').appendChild(div);
+    }
+</script>
+</body>
+</html>
